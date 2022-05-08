@@ -5,21 +5,21 @@
         <button @click='alterarNome'>Alterar Nome</button>
         <hr>
         <div class="componentes">
-            <app-usuario-info v-bind:nome='nome' />
-            <app-usuario-editar />
+            <UsuarioInfo v-bind:nome="nome" />
+            <UsuarioEditar />
         </div>
     </div>
 </template>
 
 <script>
-import AppUsuarioInfo from './UsuarioInfo'
-import AppUsuarioEditar from './UsuarioEditar'
+import UsuarioInfo from './UsuarioInfo'
+import UsuarioEditar from './UsuarioEditar'
 
 export default {
-    components: { AppUsuarioInfo, AppUsuarioEditar },
+    components: { UsuarioInfo, UsuarioEditar },
     data() {
         return {
-            nome: 'Pedro'
+            nome: 'Claudisnei'
         }
     },
     methods: {
