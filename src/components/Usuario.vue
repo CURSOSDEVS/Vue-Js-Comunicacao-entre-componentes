@@ -6,6 +6,7 @@
         <hr>
         <div class="componentes">
             <UsuarioInfo v-bind:nome="nome" />
+            <!-- <UsuarioInfo /> -->
             <UsuarioEditar />
         </div>
     </div>
