@@ -2,10 +2,14 @@
     <div class="container">
         <h1>Componente Usuário</h1>
         <p>Esse é um componente muito legal!</p>
+        <p>O nome é <strong>{{nome}}</strong></p>
         <button @click='alterarNome'>Alterar Nome</button>
         <hr>
         <div class="componentes">
-            <UsuarioInfo v-bind:nome="nome" />
+            <UsuarioInfo 
+                v-bind:nome="nome" 
+                v-on:nomeMudou=" nome = $event.novo + '-' + $event.antigo"
+            />
             <!-- <UsuarioInfo /> -->
             <UsuarioEditar />
         </div>
