@@ -4,6 +4,7 @@
         <p>Vários detalhes...</p>
         <p>Nome do Usuário: <strong>{{inverterNome()}}</strong></p>
         <button v-on:click="reiniciarNome()">Reiniciar Nome</button>
+        <button v-on:click="reiniciarFn()">Reiniciar Nome (CallBack)</button>
     </div>
 </template>
 
@@ -17,7 +18,8 @@ export default {
             //  default: function(){
             //      return Array(10).fill(0).join(',')
             //  }
-        }
+        },
+        reiniciarFn: Function
         // nome: String
     }
     ,
@@ -25,13 +27,17 @@ export default {
         inverterNome(){
            return this.nome.split('').reverse().join('')
         },
+        // reiniciarNome(){
+        //     const antigo = this.nome
+        //     this.nome = 'Claudisnei'
+        //     this.$emit('nomeMudou', {
+        //         novo: this.nome,
+        //         antigo}
+        //         )
+        // }
         reiniciarNome(){
-            const antigo = this.nome
             this.nome = 'Claudisnei'
-            this.$emit('nomeMudou', {
-                novo: this.nome,
-                antigo}
-                )
+            this.$emit('nomeMudou', this.nome )
         }
     },
 }

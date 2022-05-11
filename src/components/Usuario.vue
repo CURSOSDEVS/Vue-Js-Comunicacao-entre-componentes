@@ -6,11 +6,15 @@
         <button @click='alterarNome'>Alterar Nome</button>
         <hr>
         <div class="componentes">
+            <!-- <UsuarioInfo 
+                v-bind:nome="nome" 
+                v-on:nomeMudou=" nome = $event.novo + '-' + $event.antigo"          
+            /> -->
             <UsuarioInfo 
                 v-bind:nome="nome" 
-                v-on:nomeMudou=" nome = $event.novo + '-' + $event.antigo"
+                v-on:nomeMudou=" nome = $event" 
+                v-bind:reiniciarFn="reiniciarNome"         
             />
-            <!-- <UsuarioInfo /> -->
             <UsuarioEditar />
         </div>
     </div>
@@ -30,6 +34,9 @@ export default {
     methods: {
         alterarNome(){
             this.nome = 'Ana'
+        },
+        reiniciarNome(){
+            this.nome = 'Claudisnei'
         }
     },
 }
