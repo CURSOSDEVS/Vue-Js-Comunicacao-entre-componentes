@@ -18,7 +18,8 @@ export default {
         alterarIdade(){
             this.idade = 35
             //this.$emit('idadeMudou', this.idade )
-            barramento.$emit('idadeMudou', this.idade)
+           // barramento.$emit('idadeMudou', this.idade)
+           barramento.alterarIdade(this.idade)
         }
     },
     
